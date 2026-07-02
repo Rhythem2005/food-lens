@@ -19,18 +19,6 @@
 
 <br>
 
-<a href="#-demo">
-  <img src="https://img.shields.io/badge/Watch_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/>
-</a>
-
-<a href="#-getting-started">
-  <img src="https://img.shields.io/badge/Get_Started-28a745?style=for-the-badge"/>
-</a>
-
-<a href="#-roadmap">
-  <img src="https://img.shields.io/badge/Roadmap-blueviolet?style=for-the-badge"/>
-</a>
-
 </div>
 
 ---
