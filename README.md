@@ -1,61 +1,42 @@
 <div align="center">
 
+# 🍽️ FlavourFind
 
-# 🍕 FoodLens AI
-
-### One Search. Every Platform. The Best Deal.
-
-<p>
-  <img src="https://img.shields.io/badge/Status-Active_Development-success?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Version-v0.3-blue?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/AI-Gemini_2.5_Flash-orange?style=for-the-badge"/>
-</p>
+### Search Once. Compare Everywhere. Order Smarter.
 
 <p>
-  <strong>
-  Find the cheapest, fastest, and highest-rated food across delivery platforms using natural language.
-  </strong>
+
+<img src="https://img.shields.io/badge/Status-Active_Development-success?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Version-v1.0-blue?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Backend-FastAPI-green?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Scraping-Playwright-purple?style=for-the-badge"/>
+
 </p>
 
-<br>
+### 🚀 Compare food across multiple delivery platforms in real-time and discover the best option based on price, ratings, delivery time and offers.
 
 </div>
 
 ---
 
-## 🤔 Why FoodLens?
+# 📌 Overview
 
-Every food delivery app shows different prices.
+FlavourFind is a real-time food comparison engine that searches multiple food delivery platforms simultaneously and recommends the best options.
 
-You open:
+Instead of opening multiple apps to compare prices, delivery times and ratings, FlavourFind performs the comparison automatically.
 
-✅ Zomato
-✅ Swiggy
-✅ MagicPin
-
-...and spend 10 minutes comparing offers.
-
-FoodLens AI does this automatically.
-
-Simply type:
+Search naturally like:
 
 ```text
-Cheap paneer momos under ₹150
+Best pizza under ₹400
+
+Healthy meal under ₹250
+
+Biryani for 3 people under ₹700
+
+Fastest burger delivery near me
 ```
-
-or
-
-```text
-Pizza for 4 people under ₹800
-```
-
-or
-
-```text
-Best biryani with fastest delivery
-```
-
-and FoodLens finds the best options instantly.
 
 ---
 
@@ -64,177 +45,204 @@ and FoodLens finds the best options instantly.
 ```mermaid
 flowchart LR
 
-A[User Query] --> B[Gemini Intent Parser]
+A[User Search]
 
-B --> C[Food Type Extraction]
-B --> D[Budget Extraction]
-B --> E[Priority Detection]
+A --> B[FastAPI Backend]
 
-C --> F[Live Scraper Engine]
-D --> F
-E --> F
+B --> C[Zomato Scraper]
+B --> D[Swiggy Scraper]
 
-F --> G[Restaurant Ranking Engine]
+C --> E[Normalized Results]
+D --> E
 
-G --> H[Price Score]
-G --> I[Rating Score]
-G --> J[Delivery Score]
+E --> F[Comparison Engine]
 
-H --> K[Final Recommendations]
-I --> K
-J --> K
+F --> G[Ranking Algorithm]
 
-K --> L[AI Explanation Generator]
+G --> H[Best Overall]
+G --> I[Cheapest]
+G --> J[Fastest]
+G --> K[Highest Rated]
+
+H --> L[Frontend]
+I --> L
+J --> L
+K --> L
 ```
 
 ---
 
-# ✨ Core Features
+# ✨ Features
 
-| Feature                    | Description                                     |
-| -------------------------- | ----------------------------------------------- |
-| 🧠 Natural Language Search | Search like chatting with a friend              |
-| 🎯 AI Intent Parsing       | Understands food, budget, people count          |
-| ⚡ Live Price Fetching      | Real-time platform data                         |
-| 🏆 Smart Ranking           | Best value first                                |
-| 💬 AI Explanations         | Explains every recommendation                   |
-| 🔍 Food Relevance Engine   | Pizza results won't appear for biryani searches |
-
----
-
-# 🎮 Try Example Queries
-
-```text
-Cheap burger under ₹120
-```
-
-```text
-Best pizza for 2 people under ₹500
-```
-
-```text
-Healthy meal under ₹250
-```
-
-```text
-Fastest delivery biryani near me
-```
-
-```text
-Highest rated momos under ₹200
-```
-
-
-
+- 🔍 Natural language food search
+- ⚡ Real-time restaurant comparison
+- 🍕 Multi-platform search
+- 📊 Intelligent ranking engine
+- 💰 Cheapest option detection
+- ⭐ Highest-rated recommendations
+- 🚀 Fastest delivery recommendations
+- 🎯 Smart comparison of offers across platforms
+- 📱 Modern responsive UI
 
 ---
 
-# 🚀 Development Progress
+# 🧠 Ranking Engine
 
-## Phase 1 — AI Understanding
+Every restaurant is evaluated using multiple factors instead of relying on a single metric.
 
-* [x] Natural Language Parsing
-* [x] Gemini Integration
-* [x] Query Normalization
+Current ranking considers:
 
-## Phase 2 — Live Search
+- ⭐ Ratings
+- 💰 Pricing
+- 🚚 Delivery Time
+- 🎁 Discounts & Offers
 
-* [x] Playwright Setup
-* [x] Zomato Data Extraction
-* [x] API Interception
+The recommendation engine generates:
 
-## Phase 3 — Ranking Engine
-
-* [x] Relevance Scoring
-* [x] Utility Scoring
-* [x] Recommendation Explanations
-
-## Phase 4 — Multi Platform
-
-* [ ] Swiggy Integration
-* [ ] MagicPin Integration
-* [ ] EatFit Integration
-
-## Phase 5 — User Experience
-
-* [ ] Location Detection
-* [ ] Saved Preferences
-* [ ] User Profiles
-
-## Phase 6 — Scale
-
-* [ ] Docker Deployment
-* [ ] Redis Queue
-* [ ] Background Workers
-* [ ] Cloud Hosting
+- Best Overall
+- Cheapest
+- Fastest
+- Highest Rated
 
 ---
 
-# 🛠 Tech Stack
+# 🏗 Tech Stack
 
-### Frontend
+## Frontend
 
-* React
-* Vite
-* Framer Motion
-* CSS
+- React
+- Vite
+- Tailwind CSS
+- Framer Motion
 
-### Backend
+## Backend
 
-* FastAPI
-* Python 3.11
+- FastAPI
+- Python 3.11
+- Pydantic
 
-### AI
+## Scraping
 
-* Gemini 2.5 Flash
-
-### Scraping
-
-* Playwright
+- Playwright
+- Internal API Interception
+- DOM Fallback Extraction
 
 ---
 
-# 🔥 Current Architecture
+# 📂 Project Structure
 
 ```text
-React Frontend
-       │
-       ▼
-FastAPI Backend
-       │
-       ▼
-Gemini Intent Parser
-       │
-       ▼
-Playwright Scraper
-       │
-       ▼
-Ranking Engine
-       │
-       ▼
-AI Recommendations
+server/
+│
+├── routes/
+├── schemas/
+├── services/
+├── scrapers/
+│     ├── zomato/
+│     └── swiggy/
+│
+├── main.py
+└── requirements.txt
+
+client/
+
+├── src/
+├── pages/
+├── components/
+└── services/
 ```
 
 ---
 
-# 🌟 Vision
+# 🚀 Current Development Progress
 
-FoodLens AI aims to become:
+## Core Platform
 
-"The Google Search for Food Delivery."
+- [x] React Frontend
+- [x] FastAPI Backend
+- [x] Search API
+- [x] Ranking Engine
 
-Search once.
+## Zomato
 
-Compare everywhere.
+- [x] Playwright Setup
+- [x] Restaurant Extraction
+- [x] API Interception
+- [x] Real-time Search
 
-Order smarter.
+## Swiggy
+
+- [x] Playwright Setup
+- [x] Restaurant Extraction
+- [x] Comparison Integration
+
+## Comparison Engine
+
+- [x] Unified Search
+- [x] Result Normalization
+- [x] Platform Comparison
+- [x] Ranking
+
+## Upcoming
+
+- [ ] Location-based Search
+- [ ] Restaurant Images
+- [ ] Better ETA Prediction
+- [ ] AI-powered Recommendations
+- [ ] Historical Price Tracking
+
+---
+
+# 🎯 Example Searches
+
+```text
+Best pizza under ₹500
+```
+
+```text
+Cheapest burger near me
+```
+
+```text
+Healthy meals under ₹250
+```
+
+```text
+Highest rated biryani
+```
+
+```text
+Fastest momos delivery
+```
+
+---
+
+# 🌍 Vision
+
+FlavourFind aims to become the **search engine for food delivery**.
+
+Instead of asking:
+
+> "Should I order from Zomato or Swiggy?"
+
+Users simply search once.
+
+FlavourFind compares everything and recommends the best option.
+
+---
+
+# 🤝 Contributing
+
+Contributions, ideas and feature requests are always welcome.
+
+Feel free to open an issue or submit a pull request.
 
 ---
 
 <div align="center">
 
-### Built by Rhythem Sabharwal 🚀
+## Built with ❤️ by **Rhythem Sabharwal**
 
-⭐ Star the repository if you like the idea.
+⭐ If you like the project, consider giving it a star!
 
 </div>
