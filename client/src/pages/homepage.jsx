@@ -2,6 +2,8 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, useInView, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
 import { searchFood } from "../services/foodApi";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 // ─── Tokens ───────────────────────────────────────────────────────────────────
 const T = {
@@ -715,11 +717,13 @@ export default function FoodLensHome() {
           * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
       `}</style>
+      <Nav />
       <Hero />
       <AIFlowStrip />
       <Comparison />
       <Why />
       <ClosingCTA />
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const COLORS = {
   brand: "#FF5C2B",
@@ -39,7 +40,7 @@ export default function Nav() {
       }}
     >
       {/* Logo */}
-      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+      <Link to="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
         <div style={{
           width: 32, height: 32,
           background: COLORS.brand,
@@ -50,7 +51,7 @@ export default function Nav() {
         <span style={{ color: COLORS.white, fontWeight: 800, fontSize: 18, letterSpacing: "-0.02em" }}>
           FoodLens<span style={{ color: COLORS.brand }}>AI</span>
         </span>
-      </div>
+      </Link>
 
       {/* Desktop Links */}
       <div className="nav-desktop" style={{ display: "flex", alignItems: "center", gap: 32 }}>
@@ -66,20 +67,26 @@ export default function Nav() {
       </div>
 
       <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-        <a href="#" style={{
+        <Link to="/login" style={{
           color: COLORS.slateLight, fontSize: 14, fontWeight: 500,
           textDecoration: "none", padding: "8px 16px",
-        }}>Sign in</a>
-        <motion.button
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.97 }}
-          style={{
-            background: COLORS.brand, color: "#fff",
-            border: "none", borderRadius: 10,
-            padding: "9px 20px", fontSize: 14, fontWeight: 700,
-            cursor: "pointer",
-          }}
-        >Get Started Free</motion.button>
+          transition: "color 0.2s",
+        }}
+          onMouseEnter={e => e.target.style.color = COLORS.white}
+          onMouseLeave={e => e.target.style.color = COLORS.slateLight}
+        >Sign in</Link>
+        <Link to="/signup" style={{ textDecoration: "none" }}>
+          <motion.button
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            style={{
+              background: COLORS.brand, color: "#fff",
+              border: "none", borderRadius: 10,
+              padding: "9px 20px", fontSize: 14, fontWeight: 700,
+              cursor: "pointer",
+            }}
+          >Get Started Free</motion.button>
+        </Link>
       </div>
     </motion.nav>
   );
