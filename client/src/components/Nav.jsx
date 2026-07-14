@@ -49,7 +49,7 @@ export default function Nav() {
           fontSize: 18,
         }}>🍽️</div>
         <span style={{ color: COLORS.white, fontWeight: 800, fontSize: 18, letterSpacing: "-0.02em" }}>
-          FoodLens<span style={{ color: COLORS.brand }}>AI</span>
+          Flavour<span style={{ color: COLORS.brand }}>Find</span>
         </span>
       </Link>
 
